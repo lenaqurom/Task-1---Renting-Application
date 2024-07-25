@@ -1,10 +1,36 @@
-# Explanation of Relationships:
+### UML Class Diagram:
+https://drive.google.com/file/d/1gAzBXtaPSWX1sYpjAn4yYu3znunGbBmB/view
+
+# Relationships
 ## Inheritance:
-Apartment, House, and Shop inherit from RentableProperty.
 
+Person ← Customer
+
+Person ← Owner
+
+RentableProperty ← Apartment
+
+RentableProperty ← House
+
+RentableProperty ← Shop
+
+Payment ← PayPalPayment
+
+Payment ← CreditCardPayment
 ## Composition:
-The Customer class contains a list of RentedProperty instances.
-RentedProperty is an inner class of Customer and has RentableProperty and Contract attributes.
 
+`Contract` composed of `Customer`, `Owner`, and `RentableProperty`
+
+`RentedProperty` composed of `RentableProperty`
 ## Aggregation:
-RentableProperty and Contract are used within Customer but can exist independently.
+
+`Customer` aggregated with `RentedProperty`
+
+`Owner` aggregated with `RentableProperty`
+## Association:
+
+`Customer` associated with `RentedProperty`
+
+`Customer` associated with `Contract`
+
+`Owner` associated with `Contract`
